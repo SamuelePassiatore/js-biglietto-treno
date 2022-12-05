@@ -26,14 +26,22 @@ const targetElement = document.getElementById('target');
 
 // 2 - Chiedo all'utente il numero di km che dovrà percorrere
 const userKm = parseInt(prompt('Quanti chilometri devi percorrere?', 30).trim());
-//// console.log(userKm);
+console.log(userKm);
 
 // 3 - Chiedo all'utente la sua età 
 const userAge = parseInt(prompt('Quanti anni hai?', 20).trim());
-//// console.log(userAge);
+console.log(userAge);
 
-// TODO VALIDATION
 
+let isValid = true;
+
+// ! Controllo
+if (isNaN(userKm) && (userAge)) {
+    isValid = false;
+    alert('Devi inserire un numero');
+}
+
+if (isValid) {
 // 4 - Calcolo il prezzo totale del viaggio
 const ticketPrice = (userKm * max).toFixed(2);
 //// console.log(ticketPrice);
@@ -54,6 +62,7 @@ if (userAge < 18){
 discountPrice += '€';
 console.log(discountPrice);
 
+}
 
 
 
