@@ -20,6 +20,9 @@ console.log('JS OK');
 
 // 1 - Recupero l'elemento in pagina
 const targetElement = document.getElementById('target');
-////console.log(targetElement);
+//// console.log(targetElement);
 
+// 2 - Chiedo all'utente il numero di km che dovrà percorrere
+const userKm = prompt('Quanti chilometri devi percorrere?', 30).trim();
+//// console.log(userKm);
 
