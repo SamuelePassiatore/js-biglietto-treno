@@ -13,7 +13,7 @@ console.log('JS OK');
 2. Chiedo all'utente il numero di km che dovrà percorrere.
 3. Chiedo all'utente la sua età.
 4. Calcolo il prezzo totale del viaggio.
-5. Applico uno sconto del 20% ai minorenni (>= 18) e uno del 40% agli over 65 (>= 65).
+5. Applico uno sconto del 20% ai minorenni (>18) e uno del 40% agli over 65 (>= 65).
 6. Sottraggo gli eventuali sconti al prezzo totale del viaggio.
 7. Stampo in pagina il risultato con massimo due decimali.
 */
@@ -25,4 +25,8 @@ const targetElement = document.getElementById('target');
 // 2 - Chiedo all'utente il numero di km che dovrà percorrere
 const userKm = prompt('Quanti chilometri devi percorrere?', 30).trim();
 //// console.log(userKm);
+
+// 3 - Chiedo all'utente la sua età 
+const userAge = prompt('Quanti anni hai?', 20).trim();
+//// console.log(userAge);
 
