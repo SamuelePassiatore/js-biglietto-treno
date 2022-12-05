@@ -32,9 +32,34 @@ const userKm = parseInt(prompt('Quanti chilometri devi percorrere?', 30).trim())
 const userAge = parseInt(prompt('Quanti anni hai?', 20).trim());
 //// console.log(userAge);
 
+// TODO VALIDATION
+
 // 4 - Calcolo il prezzo totale del viaggio
-const ticketPrice = (userKm * max).toFixed(2) + ' €';
-console.log(ticketPrice);
+const ticketPrice = (userKm * max).toFixed(2);
+//// console.log(ticketPrice);
+
+// 5 - 6 Applico gli eventuali sconti e li sottraggo dal prezzo totale
+let discount;
+
+if (userAge < 18){
+    discount = ticketPrice - (ticketPrice * 20 / 100);
+} else if (userAge >= 65){
+    discount = ticketPrice - (ticketPrice * 40 / 100);
+} else {
+    discount = ticketPrice;
+}
+console.log(discount);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
