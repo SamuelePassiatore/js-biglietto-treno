@@ -15,21 +15,29 @@ console.log('JS OK');
 4. Calcolo il prezzo totale del viaggio.
 5. Applico uno sconto del 20% ai minorenni (<18) e uno del 40% agli over 65 (>= 65).
 6. Sottraggo gli eventuali sconti al prezzo totale del viaggio.
+7. Inserisco il prezzo finale nel DOM
+8. Inserisco altre informazioni, come il prezzo prima dello sconto, l'età e il chilometraggio indicati dall'utente.
 */
 
-const priceKm = 0.21;
 
-// 1 - Recupero l'elemento in pagina
-const targetElement = document.getElementById('target');
-//// console.log(targetElement);
+// Variabili prezzo per chilometro
+const priceKm = 0.21;
+////console.log(priceKm);
+
+// 1 - Recupero gli elementi in pagina
+const costKm = document.getElementById('km-cost');
+const kmChoice = document.getElementById('km-choice');
+const ageChoice = document.getElementById('age-choice');
+const normalPrice = document.getElementById('normal-price');
+const finalPrice = document.getElementById('final-price');
 
 // 2 - Chiedo all'utente il numero di km che dovrà percorrere
 const userKm = parseInt(prompt('Quanti chilometri devi percorrere?', 30).trim());
-console.log(userKm);
+////console.log(userKm);
 
 // 3 - Chiedo all'utente la sua età 
 const userAge = parseInt(prompt('Quanti anni hai?', 20).trim());
-console.log(userAge);
+////console.log(userAge);
 
 let isValid = true;
 
@@ -47,7 +55,7 @@ if (isNaN(userAge) || userAge <= 0 || userAge > 105) {
 if (isValid) {
 // 4 - Calcolo il prezzo totale del viaggio
 const ticketPrice = (userKm * priceKm);
-//// console.log(ticketPrice);
+////console.log(ticketPrice);
 
 // 5 - 6 Applico gli eventuali sconti e li sottraggo dal prezzo totale
 let discountPrice;
@@ -59,10 +67,19 @@ if (userAge < 18){
 } else {
     discountPrice = ticketPrice;
 }
+////console.log(discountPrice);
 
-discountPrice = discountPrice.toFixed(2) + '€';
-console.log(discountPrice);
+// 7 - Inserisco il prezzo finale nel DOM
+finalPrice.innerText = discountPrice.toFixed(2) + ' €';
+
+// 8 - Inserisco nel DOM il prezzo prima dello sconto, l'età e il chilometraggio indicati dall'utente.
+costKm.innerText = priceKm + ' €';
+kmChoice.innerText = userKm;
+ageChoice.innerText = userAge;
+normalPrice.innerText = ticketPrice.toFixed(2) + ' €';
 }
+
+
 
 
 
