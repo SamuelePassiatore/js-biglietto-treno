@@ -15,10 +15,9 @@ console.log('JS OK');
 4. Calcolo il prezzo totale del viaggio.
 5. Applico uno sconto del 20% ai minorenni (<18) e uno del 40% agli over 65 (>= 65).
 6. Sottraggo gli eventuali sconti al prezzo totale del viaggio.
-7. Aggiungo il simbolo dell'euro.
 */
 
-const max = 0.21;
+const priceKm = 0.21;
 
 // 1 - Recupero l'elemento in pagina
 const targetElement = document.getElementById('target');
@@ -32,18 +31,22 @@ console.log(userKm);
 const userAge = parseInt(prompt('Quanti anni hai?', 20).trim());
 console.log(userAge);
 
-
 let isValid = true;
 
 // ! Controllo
-if (isNaN(userKm) && (userAge)) {
+if (isNaN(userKm) || userKm <= 0 || userKm > 2000) {
     isValid = false;
-    alert('Devi inserire un numero');
+    alert('Devi inserire un numero di km tra 1 a 2000');
+}
+
+if (isNaN(userAge) || userAge <= 0 || userAge > 105) {
+    isValid = false;
+    alert("'Devi inserire un'età tra 1 a 105'");
 }
 
 if (isValid) {
 // 4 - Calcolo il prezzo totale del viaggio
-const ticketPrice = (userKm * max).toFixed(2);
+const ticketPrice = (userKm * priceKm);
 //// console.log(ticketPrice);
 
 // 5 - 6 Applico gli eventuali sconti e li sottraggo dal prezzo totale
@@ -56,13 +59,11 @@ if (userAge < 18){
 } else {
     discountPrice = ticketPrice;
 }
-////console.log(discountPrice);
 
-// 7 - Aggiungo il simbolo dell'euro 
-discountPrice += '€';
+discountPrice = discountPrice.toFixed(2) + '€';
 console.log(discountPrice);
-
 }
+
 
 
 
