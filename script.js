@@ -18,4 +18,8 @@ console.log('JS OK');
 7. Stampo in pagina il risultato con massimo due decimali.
 */
 
+// 1 - Recupero l'elemento in pagina
+const targetElement = document.getElementById('target');
+////console.log(targetElement);
+
 
