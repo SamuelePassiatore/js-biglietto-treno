@@ -15,7 +15,7 @@ console.log('JS OK');
 4. Calcolo il prezzo totale del viaggio.
 5. Applico uno sconto del 20% ai minorenni (<18) e uno del 40% agli over 65 (>= 65).
 6. Sottraggo gli eventuali sconti al prezzo totale del viaggio.
-7. Stampo in pagina il risultato con massimo due decimali.
+7. Aggiungo il simbolo dell'euro.
 */
 
 const max = 0.21;
@@ -39,16 +39,21 @@ const ticketPrice = (userKm * max).toFixed(2);
 //// console.log(ticketPrice);
 
 // 5 - 6 Applico gli eventuali sconti e li sottraggo dal prezzo totale
-let discount;
+let discountPrice;
 
 if (userAge < 18){
-    discount = ticketPrice - (ticketPrice * 20 / 100);
+    discountPrice = ticketPrice - (ticketPrice * 20 / 100);
 } else if (userAge >= 65){
-    discount = ticketPrice - (ticketPrice * 40 / 100);
+    discountPrice = ticketPrice - (ticketPrice * 40 / 100);
 } else {
-    discount = ticketPrice;
+    discountPrice = ticketPrice;
 }
-console.log(discount);
+////console.log(discountPrice);
+
+// 7 - Aggiungo il simbolo dell'euro 
+discountPrice += '€';
+console.log(discountPrice);
+
 
 
 
