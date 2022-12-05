@@ -49,7 +49,7 @@ if (isNaN(userKm) || userKm <= 0 || userKm > 2000) {
 
 if (isNaN(userAge) || userAge <= 0 || userAge > 105) {
     isValid = false;
-    alert("'Devi inserire un'età tra 1 a 105'");
+    alert("Devi inserire un'età tra 1 a 105");
 }
 
 if (isValid) {
